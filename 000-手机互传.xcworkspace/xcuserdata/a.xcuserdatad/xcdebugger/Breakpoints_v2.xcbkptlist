@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/Album/AlbumViewController.m"
-            timestampString = "588138269.181172"
+            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/LingGCDAsyncSocket.m"
+            timestampString = "588324129.404969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-socket:didAcceptNewSocket:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,90 +26,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/Album/AlbumViewController.m"
-            timestampString = "588138269.181635"
+            timestampString = "588324129.405322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-viewDidAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/Album/AlbumViewController.m"
-            timestampString = "588138269.181969"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/Album/AlbumViewController.m"
-            timestampString = "588138269.182224"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-sendAction:"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[AlbumViewController collectionView:cellForItemAtIndexPath:]"
+                  symbolName = "-[AlbumViewController sendAction:]"
                   moduleName = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a/Documents/Code/000-%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0/000-%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0/TransferInPhone/Album/AlbumViewController.m"
-                  timestampString = "588138029.989446"
+                  timestampString = "588324129.995049"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "230">
+                  startingLineNumber = "300"
+                  endingLineNumber = "300"
+                  offsetFromSymbolStart = "72">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__61-[AlbumViewController collectionView:cellForItemAtIndexPath:]_block_invoke"
+                  symbolName = "-[AlbumViewController sendAction:]"
                   moduleName = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a/Documents/Code/000-%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0/000-%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0/TransferInPhone/Album/AlbumViewController.m"
-                  timestampString = "588138029.992618"
+                  timestampString = "588324129.999853"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "8">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_e4_20s24s"
-                  moduleName = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a/Documents/Code/000-%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0/000-%E6%89%8B%E6%9C%BA%E4%BA%92%E4%BC%A0/TransferInPhone/Album/AlbumViewController.m"
-                  timestampString = "588138029.9946131"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "8">
+                  startingLineNumber = "300"
+                  endingLineNumber = "300"
+                  offsetFromSymbolStart = "90">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -120,13 +73,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/Album/AlbumCollectionViewCell.m"
-            timestampString = "588138269.182475"
+            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/LingGCDAsyncSocket.m"
+            timestampString = "588324129.406029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-setThumbnailImage:"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-socket:didReadData:withTag:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "000-&#x624b;&#x673a;&#x4e92;&#x4f20;/TransferInPhone/Album/AlbumViewController.m"
+            timestampString = "588324151.999172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
+            landmarkName = "-socket:didReadData:withTag:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

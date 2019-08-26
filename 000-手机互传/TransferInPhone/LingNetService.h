@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class GCDAsyncSocket;
+typedef void(^LingFoundServicesBlock)(NSArray<NSNetService *> *);
 
 @protocol LingServiceDelegate <NSObject>
 

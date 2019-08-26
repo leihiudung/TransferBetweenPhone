@@ -71,4 +71,9 @@
     }];
     return assets;
 }
+
+- (void)photoLibraryDidChange:(nonnull PHChange *)changeInstance {
+    
+}
+
 @end

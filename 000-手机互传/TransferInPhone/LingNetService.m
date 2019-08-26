@@ -16,7 +16,7 @@
 }
 @property (nonatomic, strong) NSNetService *netService;
 
-@property (nonatomic, strong) NSNetServiceBrowser *netSerivceBrowser;
+@property (nonatomic, strong) NSNetServiceBrowser *netServiceBrowser;
 
 @property (nonatomic, strong) NSMutableArray<NSNetService *> *netServiceArray;
 @end
@@ -47,13 +47,13 @@
     [service publish];
     
     // ---- 查找服务 ----
-    self.netSerivceBrowser = [[NSNetServiceBrowser alloc]init];
-    self.netSerivceBrowser.delegate = self;
+    self.netServiceBrowser = [[NSNetServiceBrowser alloc]init];
+    self.netServiceBrowser.delegate = self;
     NSRunLoop *currentLoop = [NSRunLoop currentRunLoop];
     // NSNetServiceBrowser是使用run loop实现不断循环搜索的，类似于NSTimer，主线程中默认开启了runloop，而子线程中默认没有创建runloop，所以需要自己创建并开启一个RunLoop，然后把NSNetServiceBrowser使用scheduleInRunLoop:forMode: 添加到runloop里，这样Bonjour才能开始工作
-    [self.netSerivceBrowser scheduleInRunLoop:currentLoop forMode:NSRunLoopCommonModes];
+    [self.netServiceBrowser scheduleInRunLoop:currentLoop forMode:NSRunLoopCommonModes];
     // 查找的服务类型
-    [self.netSerivceBrowser searchForServicesOfType:NetServiceType inDomain:NetServiceDomain];
+    [self.netServiceBrowser searchForServicesOfType:NetServiceType inDomain:NetServiceDomain];
     [currentLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:300]];
     
     
@@ -149,9 +149,11 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing {
     NSLog(@"netServiceBrowser didFindService---------=%@  =%@  =%@",service.name,service.addresses,service.hostName);
     [self.netServiceArray addObject:service];
+    [service resolveWithTimeout:5];
     if ([self.lingDelegate respondsToSelector:@selector(lingFoundService:)]) {
         [self.lingDelegate lingFoundService:self.netServiceArray.copy];
     }
+    
 }
 
 /*

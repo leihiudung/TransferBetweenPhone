@@ -9,18 +9,20 @@
 #import "TransferViewController.h"
 #import "LingNetService.h"
 #import "AlbumViewController.h"
+#import "LingGCDAsyncSocket.h"
 
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
-
+#import <Photos/Photos.h>
 #define CellId @"CellId"
 
 
-@interface TransferViewController () <UITableViewDataSource,UITableViewDelegate, LingServiceDelegate>
+@interface TransferViewController () <UITableViewDataSource,UITableViewDelegate, LingServiceDelegate, LingGCDAsyncSocketDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) NSArray<NSNetService *> *netServices;
 
 @property (nonatomic, strong) LingNetService *lingNetService;
+@property (nonatomic, strong) LingGCDAsyncSocket *lingGCDAsyncSocket;
 @end
 
 @implementation TransferViewController
@@ -40,7 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.lingGCDAsyncSocket = [[LingGCDAsyncSocket alloc]init];
+    self.lingGCDAsyncSocket.asyncSocketDelegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -51,8 +54,7 @@
         self.lingNetService = [[LingNetService alloc]initWithNetServiceName:serviceName andLingDelegate:self];
     });
     
-//    self.lingNetService.lingDelegate = self;
-    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(asyncSocketDidReadData) name:@"AsyncSocketDidReadData" object:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -67,17 +69,44 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    AlbumViewController *controller = [[AlbumViewController alloc]init];
-    [self presentViewController:controller animated:YES completion:nil];
+    AlbumViewController *controller = [[AlbumViewController alloc] initAsClient:self.netServices[indexPath.row]];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
+
+    [self presentViewController:navigationController animated:YES completion:nil];
     
 }
 
 - (void)lingFoundService:(NSArray<NSNetService *> *)netServices {
     dispatch_async(dispatch_get_main_queue(), ^{
+        for (NSNetService *tempService in netServices) {
+            NSLog(@"**lingFoundService: %@", tempService.hostName);
+        }
+        
         self.netServices = netServices.copy;
         [self.tableView reloadData];
     });
     
 }
+
+- (void)lingAcceptNewSocket:(GCDAsyncSocket *)newsocket andServerSocket:(GCDAsyncSocket *)serverSocket andClientNetService:(NSNetService *)clientSerivce {
+    AlbumViewController *controller = [[AlbumViewController alloc] initAsServer:newsocket andServerSocket:self.lingGCDAsyncSocket.obtainSocket andClientNetService:clientSerivce andLingGCDAsyncSocket:self.lingGCDAsyncSocket];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+
+}
+
+//- (void)asyncSocketDidReadData:(NSNotification *)notification {
+//    NSDictionary *dict = notification.userInfo;
+//    UIImage *image = dict[@"Image"];
+//
+//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+//        [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+//    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"Saving was make a misstake");
+//        }
+//    }];
+//}
 
 @end

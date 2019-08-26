@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LingGCDAsyncSocket;
+@class GCDAsyncSocket;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AlbumViewController : UIViewController
 
+- (instancetype)initAsServer:(GCDAsyncSocket *)clientSocket andServerSocket:(GCDAsyncSocket *)serverSocket andClientNetService:(NSNetService *)service andLingGCDAsyncSocket:(LingGCDAsyncSocket *)asyncSocket;
+- (instancetype)initAsClient:(NSNetService *)netService;
 @end
 
 NS_ASSUME_NONNULL_END

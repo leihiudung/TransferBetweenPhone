@@ -20,6 +20,7 @@
 		00D2ABBE230D46DC00C0AA51 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D2ABBD230D46DC00C0AA51 /* AlbumViewController.m */; };
 		00D2ABC1230D474100C0AA51 /* AlbumService.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D2ABC0230D474100C0AA51 /* AlbumService.m */; };
 		00D2ABC4230D844800C0AA51 /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D2ABC3230D844800C0AA51 /* AlbumCollectionViewCell.m */; };
+		00D2ABC9230E8FFF00C0AA51 /* LingGCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D2ABC8230E8FFE00C0AA51 /* LingGCDAsyncSocket.m */; };
 		364A001A0B229D41B45DEB21 /* Pods_000_____UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC78B1A534CE30748ECEF09 /* Pods_000_____UITests.framework */; };
 		F25A7802BBCD0847E0DBA7AA /* Pods_000_____Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8623253FFE5A564B50E0182 /* Pods_000_____Tests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,8 @@
 		00D2ABC0230D474100C0AA51 /* AlbumService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumService.m; sourceTree = "<group>"; };
 		00D2ABC2230D844800C0AA51 /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
 		00D2ABC3230D844800C0AA51 /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		00D2ABC5230E863A00C0AA51 /* LingGCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LingGCDAsyncSocket.h; sourceTree = "<group>"; };
+		00D2ABC8230E8FFE00C0AA51 /* LingGCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingGCDAsyncSocket.m; sourceTree = "<group>"; };
 		080ABF8600A79E5E455CB730 /* Pods-000-手机互传UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-000-手机互传UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-000-手机互传UITests/Pods-000-手机互传UITests.release.xcconfig"; sourceTree = "<group>"; };
 		0EF2C261D7862944DFC5635C /* Pods-000-手机互传Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-000-手机互传Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-000-手机互传Tests/Pods-000-手机互传Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		54D31406752EFA08EB9CE55E /* Pods-000-手机互传.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-000-手机互传.debug.xcconfig"; path = "Pods/Target Support Files/Pods-000-手机互传/Pods-000-手机互传.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				00D2ABB6230D21F000C0AA51 /* TransferViewController.m */,
 				00D2ABB8230D290400C0AA51 /* LingNetService.h */,
 				00D2ABB9230D290400C0AA51 /* LingNetService.m */,
+				00D2ABC5230E863A00C0AA51 /* LingGCDAsyncSocket.h */,
+				00D2ABC8230E8FFE00C0AA51 /* LingGCDAsyncSocket.m */,
 			);
 			path = TransferInPhone;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D2ABC9230E8FFF00C0AA51 /* LingGCDAsyncSocket.m in Sources */,
 				00D2AB87230CF87700C0AA51 /* ViewController.m in Sources */,
 				00D2ABBA230D290400C0AA51 /* LingNetService.m in Sources */,
 				00D2ABC1230D474100C0AA51 /* AlbumService.m in Sources */,

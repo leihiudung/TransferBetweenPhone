@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *representedAssetIdentifier;
 
 @property (nonatomic, strong) UIImage *thumbnailImage;
-
+@property (nonatomic, assign) BOOL isChosen;
+@property (nonatomic, assign) BOOL isChosenAll;
 - (void)initCellData:(UIImage *)image;
 - (void)initCellDataWith:(PHAsset *)phAsset;
+
 @end
 
 NS_ASSUME_NONNULL_END
